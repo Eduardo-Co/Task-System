@@ -120,7 +120,7 @@ class TarefaController extends Controller
 
         foreach ($tarefas as $tarefa) {
             if ($tarefa->finalizar !== null) {
-                $dataSalva = Carbon::createFromFormat('Y-m-d H:i', $tarefa->finalizar);
+                $dataSalva = Carbon::createFromFormat('Y-m-d H:i:s', $tarefa->finalizar);
 
                 if ($dataSalva->isPast()) {
                     $tarefaPerdida = new TarefasPerdidas;
