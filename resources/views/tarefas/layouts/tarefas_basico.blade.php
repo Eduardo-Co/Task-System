@@ -7,7 +7,7 @@
        
         <style>
             body{
-                margin: 6px;
+                margin: 5px;
                 background-color: rgb(133, 131, 131);
             }
         </style>
