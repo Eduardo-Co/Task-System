@@ -120,7 +120,9 @@ class TarefaController extends Controller
 
         foreach ($tarefas as $tarefa) {
             if ($tarefa->finalizar !== null) {
-                $dataSalva = Carbon::createFromFormat('Y-m-d H:i', $tarefa->finalizar);
+                $dataString = trim($tarefa->finalizar); // Remover espaços em branco extras
+                $dataString = preg_replace('/\s+/', ' ', $dataString); // Remover espaços duplicados
+                $dataSalva = Carbon::createFromFormat('d/m/Y H:i', $dataString);
 
                 if ($dataSalva->isPast()) {
                     $tarefaPerdida = new TarefasPerdidas;
