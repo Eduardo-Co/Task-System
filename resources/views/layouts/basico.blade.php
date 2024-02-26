@@ -4,7 +4,7 @@
         <title>Super Gestão - @yield('titulo')</title>
         <meta charset="utf-8">
         <base href="/">
-        <link rel="stylesheet" href="/css/estilo_basico.css">
+        <link rel="stylesheet" href="{{ asset('/css/tarefa_estilo.css') }}">
        
         
         <style>
