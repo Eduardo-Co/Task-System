@@ -1,0 +1,370 @@
+
+
+.login {
+  margin-left: 30px;
+  margin-top: 15px;
+  width: 10%;
+  height: 40px;
+  background-color: white;
+  display: flex; /* Adicionando display flex */
+  align-items: center; /* Centralizando verticalmente */
+  border-radius: 10px;
+}
+
+.login a {
+  margin: auto;
+  text-decoration: none;
+  color: black;
+}
+.sair {
+  margin-left: 30px;
+  margin-top: 15px;
+  width: 10%;
+  height: 40px;
+  background-color: white;
+  display: flex; /* Adicionando display flex */
+  align-items: center; /* Centralizando verticalmente */
+  border-radius: 10px;
+}
+
+.sair a {
+  margin: auto;
+  text-decoration: none;
+  color: black;
+}
+
+
+
+.topo {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(39, 38, 38);
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.topo ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 0;
+}
+
+.topo ul li {
+  text-decoration: none;
+  list-style: none;
+  margin: 20px 30px;
+}
+
+.topo ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+/* Media query para ajustar o layout em dispositivos móveis */
+.hamburguer-button {
+  display: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+}
+
+@media screen and (max-width: 767px) {
+  .topo {
+      flex-direction: column;
+  }
+
+  .topo ul {
+      display: none;
+      flex-direction: column;
+      margin: 0px;
+      padding-left: 30px;
+      padding-right: 30px;
+      width: 100%;
+  }
+
+  .hamburguer-button {
+      display: block;
+  }
+
+  .login {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 28%;
+    margin-left: 140px;
+  }
+  .sair {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 28%;
+    margin-left: 140px;
+  }
+}
+
+
+
+
+
+.login-container { 
+  
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 350px;
+  background-color: rgb(48, 45, 45);
+  margin: auto;
+  border-radius: 20px;
+}
+
+.login-form-wrapper {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-form {
+  width: 300px;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background-color: #444;
+  color: black;
+  box-sizing: border-box;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #bee6e6;
+}
+
+
+.login-container h2{
+  color: rgb(190, 188, 188);
+  margin-bottom: 50px;
+
+}
+
+.login-container a{
+
+  margin-top: 10px;
+  color: rgb(190, 188, 188);
+  text-decoration: none;
+
+}
+
+
+.task-app {
+  max-width: 600px;
+  min-width: 490px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.task-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.task-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.task-form #taskInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.task-form button {
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  background-color: #45a049;
+}
+
+.task-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-list .delete-btn {
+  background-color: #f44336;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.task-list .delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.task-form #taskInputData {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.task-app #centralizar{
+
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+  margin-left: 13%;
+  font-size: 14px;
+}
+
+
+@media screen and (max-width: 767px) {
+
+
+.task-form{
+
+  width: 400px;
+
+}
+
+
+.task-app #centralizar{
+
+  margin-top: -10px;
+  display: flex;
+  justify-content: left;
+  margin-right: 50px;
+  font-size: 14px;
+}
+
+}
+
+.task {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.task-message,
+.task-deadline {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.task-deadline {
+  color: #888;
+}
+
+.task-actions{
+
+  margin: 10px;
+
+}
+
+.edit-btn{
+
+  background-color: rgb(112, 112, 241);
+
+}
+
+.delete-btn{
+
+  background-color: rgb(242, 77, 77);
+
+}
+
+
+
+
+.cadastro-container { 
+  
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 450px;
+  background-color: rgb(48, 45, 45);
+  margin: auto;
+  border-radius: 20px;
+}
+
+.cadastro-container h2{
+  color: rgb(190, 188, 188);
+  margin-bottom: 50px;
+
+}
+
+.cadastro-container a{
+
+  margin-top: 10px;
+  color: rgb(190, 188, 188);
+  text-decoration: none;
+
+}
