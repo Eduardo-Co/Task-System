@@ -8,7 +8,7 @@
         
         <style>
             body{
-                margin: 5px;
+                margin: 6px;
                 background-color: rgb(133, 131, 131);
             }
         </style>
