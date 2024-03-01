@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tarefa;
+use App\Models\TarefasConcluidas;
 use Carbon\Carbon;
 use App\Models\TarefasPerdidas;
 
@@ -120,11 +121,9 @@ class TarefaController extends Controller
 
         foreach ($tarefas as $tarefa) {
             if ($tarefa->finalizar !== null) {
-                $dataString = trim($tarefa->finalizar); 
-
-                $dataString = preg_replace('/\s+/', ' ', $dataString);
-                
-                $dataSalva = Carbon::createFromFormat('d-m-Y H:i', $dataString);
+                $dataString = trim($tarefa->finalizar); // Remover espaços em branco extras
+                $dataString = preg_replace('/\s+/', ' ', $dataString); // Remover espaços duplicados
+                $dataSalva = Carbon::createFromFormat('Y-m-d H:i:s', $dataString);
 
                 if ($dataSalva->isPast()) {
                     $tarefaPerdida = new TarefasPerdidas;
@@ -148,4 +147,40 @@ class TarefaController extends Controller
     return view('tarefas.perdidas', ['tarefasPerdidas' => $tarefasPerdidas]);
     }   
 
+
+    public function salvarconcluidas($id)
+    {
+    
+        $tarefa = Tarefa::find($id);
+
+ 
+        if($tarefa) {
+
+            $tarefaConcluida = new TarefasConcluidas;
+            $tarefaConcluida->mensagem = $tarefa->mensagem;
+            $tarefaConcluida->finalizar = $tarefa->finalizar;
+            $tarefaConcluida->user_id = $tarefa->user_id;
+            $tarefaConcluida->id  = $tarefa->id;
+
+
+            $verificarId = TarefasConcluidas::where('id', $tarefaConcluida->id)->exists();
+
+            if (!$verificarId) {
+                $tarefaConcluida->save();
+                return redirect()->route('tarefas.consultar');
+            }
+           else{
+
+            return redirect()->route('tarefas.consultar');
+           }
+        }
+    }
+
+    public function concluidas(){
+
+        $tarefas = TarefasConcluidas::all();
+        dd($tarefas);
+
+        return view("tarefas.concluidas",['tarefas' => $tarefas]);
+    }
 }

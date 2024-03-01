@@ -27,9 +27,10 @@ Route::middleware(['autenticacao'])->prefix('tarefas')->group(function () {
     Route::get('/sair', [AutenticacaoController::class, 'sair'])->name('tarefas.sair');
     Route::get('/adicionar', [TarefaController::class, 'adicionar'])->name('tarefas.adicionar');
     Route::post('/adicionar', [TarefaController::class, 'adicionar_tarefa'])->name('tarefas.adicionar');
-    Route::get('/concluidas', [TarefaController::class, 'concluidas'])->name('tarefas.concluidas');
     Route::get('/restantes', [TarefaController::class, 'restantes'])->name('tarefas.restantes');
     Route::get('/perdidas', [TarefaController::class, 'perdidas'])->name('tarefas.perdidas');
+    Route::get('/salvarconcluidas/{id?}', [TarefaController::class, 'salvarconcluidas'])->name('tarefas.salvarconcluidas');
+    Route::get('/Concluidas', [TarefaController::class, 'concluidas'])->name('tarefas.concluidas');
     Route::get('/editar/{id}', [TarefaController::class, 'editar'])->name('tarefas.editar');
     Route::get('/excluir/{id}', [TarefaController::class, 'excluir'])->name('tarefas.excluir');
     Route::get('/procurarusuario', [ProcurarusuarioController::class, 'procurar'])->name('tarefas.procurar');

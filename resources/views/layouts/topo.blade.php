@@ -16,7 +16,7 @@
     <ul>
         <li><a href="{{route('tarefas.consultar')}}">Tarefas</a></li>
         <li><a href="{{ route('tarefas.adicionar') }}"> Adicionar</a></li>
-        <li><a href="">Concluidas</a></li>
+        <li><a href="{{ route('tarefas.concluidas')}}">Concluidas</a></li>
         <li><a href="">Restantes</a></li>
         <li><a href="{{route('tarefas.perdidas')}}">Perdidas</a></li>
         

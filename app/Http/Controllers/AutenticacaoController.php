@@ -20,6 +20,7 @@ class AutenticacaoController extends Controller
         ];
 
         $request->validate($regras);
+        //get
 
         $email = $request->input('usuario');
         $password = $request->input('senha');
@@ -31,13 +32,17 @@ class AutenticacaoController extends Controller
             $_SESSION['nome'] = $user->name;
             $_SESSION['email'] = $user->email;
             $_SESSION['user_id'] = $user->id;
-
+            
             return redirect()->route('tarefas.consultar');
         } else {
             return redirect()->route('login')->with('erro', 'Credenciais inválidas');
         }
     }
-
+    
+    public function cadastro(Request $request)
+    {
+        return view('tarefas.cadastro');
+    }
     public function cadastro_autenticacao(Request $request)
     {
         $request->validate([
@@ -55,10 +60,6 @@ class AutenticacaoController extends Controller
         return view('login');
     }
 
-    public function cadastro(Request $request)
-    {
-        return view('tarefas.cadastro');
-    }
 
     public function sair(){
         session_destroy();
